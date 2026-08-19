@@ -108,34 +108,64 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // === GESTION DES PROJETS (TEXTE RICHE) ===
+  
     const modal = document.getElementById('projectModal');
     const modalBody = document.getElementById('modalBody');
 
-    // C'est ici que tu modifies tes textes !
     const projectData = {
-        sae201: {
-            title: "Architecture Réseau PME (SAE201)",
-            image: "photos/SAE201.png",
-            tags: ["Cisco", "Routage", "Commutation", "Sécurité"],
+        // NOUVEAU : Bloc Alternance Orange avec les compétences du B.U.T
+        orange: {
+            title: "Missions & Compétences - Alternance Orange",
+            image: "photos/orangelogo.png", // Image par défaut pour la modale
+            tags: ["Fibre FTTH", "Réseau Cuivre", "Analyse", "BUT2"],
             desc: `
-                <h3>Contexte du projet</h3>
-                <p>
-                    L'objectif de cette SAE est de faire une synthèse des connaissances en réseau acquises tout au long de la première année. 
-                    Il s'agit de concevoir une architecture complète pour une entreprise multisites.
-                </p>
+                <p style="margin-bottom: 1rem;">Lors de ma première année d'alternance à la Direction Intervention Centre-Val de Loire d'Orange (équipe E GP 37), mon objectif quotidien est d'assurer le déploiement et la maintenance des réseaux cuivre et fibre optique pour une clientèle grand public et entreprise.</p>
                 
-                <h3>Réalisations Techniques</h3>
-                <ul>
-                    <li><strong>Routage & Commutation :</strong> Configuration des protocoles (OSPF) et segmentation par VLANs pour isoler les flux.</li>
-                    <li><strong>Services Réseaux :</strong> Mise en place de serveurs DHCP pour l'adressage dynamique et DNS pour la résolution de noms.</li>
-                    <li><strong>Sécurité :</strong> Application d'ACLs (Access Control Lists) pour filtrer le trafic entrant et sortant.</li>
+                <h3 style="margin-top: 1.5rem; color: var(--color-primary);">Mes réalisations techniques :</h3>
+                <ul style="margin-bottom: 1.5rem; padding-left: 1.5rem; line-height: 1.6;">
+                    <li><strong>Déploiement et configuration :</strong> Raccordement fibre et installation de routeurs pour des clients professionnels (ex: agence MAAF), incluant la préparation de la Prise Terminale Optique (PTO), la réalisation de soudures optiques et la configuration via l'application interne <em>Visibility</em>.</li>
+                    <li><strong>Diagnostic et Dépannage FTTH :</strong> Utilisation d'appareils de mesure de précision (réflectomètre OTDR, photomètre OLP) pour caractériser les liaisons optiques, analyser les courbes d'atténuation, localiser précisément les coupures et effectuer les réparations matérielles (raccordement en portefeuille).</li>
+                    <li><strong>Veille technologique :</strong> Analyse critique de l'intelligence artificielle interne d'Orange (Dinootoo AI) et présentation de ses capacités et limites techniques à mon équipe lors d'une réunion mensuelle.</li>
                 </ul>
 
-                <h3>Bilan</h3>
-                <p>Ce projet m'a permis de valider ma capacité à traduire un cahier des charges fonctionnel en solutions techniques concrètes.</p>
+                <h3 style="margin-top: 1.5rem; color: var(--color-primary);">Lien avec le référentiel du B.U.T R&T :</h3>
+                <p style="margin-bottom: 1rem;">Si je dois faire un lien avec le référentiel de mon B.U.T R&T (parcours Cybersécurité), je dirais que j'ai pu approfondir et valider les compétences suivantes :</p>
+                
+                <p style="margin-bottom: 1rem;"><strong>Connecter :</strong> La <strong>CE2.02</strong> ("en faisant preuve d'une démarche scientifique") s'illustre lors de mes diagnostics complexes sur le réseau FTTH, où je dois déduire l'emplacement d'une panne à partir de courbes réflectométriques (OTDR). Ces interventions m'ont permis de développer l'<strong>AC22.01</strong> ("Déployer et caractériser des systèmes de transmissions complexes") et l'<strong>AC22.04</strong> ("Déployer des réseaux d'accès des opérateurs"). Cela est justifié concrètement par les interventions de production que j'ai pu mené tout au long de l'année. Par ailleurs, la <strong>CE2.01</strong> ("en communiquant avec le client et les différents acteurs impliqués") est mobilisée quotidiennement pour adapter mon discours technique face aux abonnés lors des dépannages.</p>
+
+                <p style="margin-bottom: 1.5rem;"><strong>Administrer :</strong> L'installation d'équipements pour les professionnels m'a permis de valider l'<strong>AC21.04</strong> ("Déployer des services réseaux avancés") et l'<strong>AC21.05</strong> ("Identifier les réseaux opérateurs et l'architecture d'internet"). Enfin, la <strong>CE1.05</strong> ("en assurant une veille technologique") a été démontrée par ma présentation de l'IA Dinootoo à mes collègues. Cette présentation inclus aussi l'<strong>AC21.06</strong> ("Travailler en équipe pour développer ses compétences professionnelles").</p>
+
+                <h3 style="margin-top: 1.5rem; color: var(--color-primary);">Bilan :</h3>
+                <p style="margin-bottom: 1.5rem;">Si la constitution de cette section du portfolio relève d'une expérience en entreprise, l'exercice d'analyse et de prise de recul s'inscrit parfaitement dans les attentes de la formation. J'ai pu identifier mes réussites  mais aussi mes axes de progression pour ma deuxième année : approfondir mes compétences sur les technologies Cuivre (xDSL), renforcer mes capacités sur le réseau fibre ainsi que l'amélioration des compétences de communication</p>
             `,
-            pdf: "SAE201-CR-V2.pdf"
+            pdf: "Rapport S4.pdf"
+        },
+        sae201: {
+            title: "Architecture Réseau PME (SAE 201)",
+            image: "photos/SAE201.png",
+            tags: ["Cisco", "Routage & VLANs", "Services & DMZ", "Sécurité"],
+            desc: `
+                <p style="margin-bottom: 1rem;">L'objectif de cette SAE était de concevoir, déployer et sécuriser l'architecture réseau complète d'une petite entreprise multisites sur Cisco Packet Tracer, en intégrant des services fondamentaux et une connexion à un Fournisseur d'Accès Internet (FAI).</p>
+                
+                <h3 style="margin-top: 1.5rem; color: var(--color-primary);">Mes réalisations techniques :</h3>
+                <ul style="margin-bottom: 1.5rem; padding-left: 1.5rem; line-height: 1.6;">
+                    <li><strong>Architecture et Commutation :</strong> Mise en place d'une topologie redondante avec segmentation en 8 VLANs par service (Direction, R&D, Accueil, etc.) et adressage optimisé en IPv4 (VLSM) et IPv6.</li>
+                    <li><strong>Services Réseaux :</strong> Déploiement et configuration de serveurs internes (DHCPv4/v6, DNS, Mail SMTP/POP3, serveur Web Intranet codé en HTML/CSS).</li>
+                    <li><strong>Routage et Interconnexion :</strong> Configuration du routage inter-VLAN (sous-interfaces), de routes statiques et de la traduction d'adresses (NAT/PAT) pour l'accès Internet via la liaison fibre du FAI.</li>
+                    <li><strong>Sécurisation de l'infrastructure :</strong> Création d'une DMZ pour les services publics (Web/DNS public), restriction des flux par listes de contrôle d'accès (ACLs) et sécurisation des équipements via SSH (clés RSA 4096 bits, VLAN de management dédié).</li>
+                </ul>
+
+                <h3 style="margin-top: 1.5rem; color: var(--color-primary);">Lien avec le référentiel du B.U.T R&T :</h3>
+                <p style="margin-bottom: 1rem;">Si je dois faire un lien avec le référentiel, ce projet m'a permis de valider concrètement les compétences suivantes :</p>
+                
+                <p style="margin-bottom: 1rem;"><strong>Administrer :</strong> La conception de l'adressage (VLSM) et la segmentation du trafic m'ont permis de valider l'<strong>AC11.03</strong> ("Configurer les fonctions de base du réseau local"). Le déploiement des serveurs privés (DHCP, DNS, Mail, Intranet) et la configuration du routeur de bordure (NAT/PAT, routage inter-VLAN) justifient pleinement l'acquisition de l'<strong>AC21.04</strong> ("Déployer des services réseaux avancés"). Ces éléments sont documentés pas à pas dans mon compte-rendu (Figures 12 à 25).</p>
+
+                <p style="margin-bottom: 1.5rem;"><strong>Sécuriser :</strong> Le durcissement des équipements d'interconnexion correspond à la <strong>CE4.01</strong> ("en visant un juste compromis entre exigences de sécurité et contraintes d'utilisation"). J'ai pu valider l'<strong>AC24.02Cyber</strong> ("Mettre en œuvre les outils fondamentaux de sécurisation d'une infrastructure du réseau") et l'<strong>AC24.03Cyber</strong> ("Sécuriser les services") en créant un VLAN de management isolé, en imposant des accès SSH chiffrés sur les lignes VTY et en déployant des ACLs de contrôle de flux pour protéger le réseau LAN (Figures 57 et 63).</p>
+
+                <h3 style="margin-top: 1.5rem; color: var(--color-primary);">Bilan :</h3>
+                <p style="margin-bottom: 1.5rem;">Cette SAE a été un excellent moyen de synthétiser les concepts théoriques pour construire un réseau de A à Z. Définir le cahier des charges, configurer les équipements en CLI, et élaborer une méthode de test rigoureuse pour prouver le bon fonctionnement de chaque service m'a donné une vision globale et très concrète des missions d'un administrateur réseaux et sécurité.</p>
+            `,
+            pdf: "SAE201-CR-RIGALLAUD.pdf"
         },
         pacman: {
             title: "Projet Pac-Man (NSI)",
@@ -155,7 +185,34 @@ document.addEventListener('DOMContentLoaded', () => {
                 <p>J'ai utilisé la bibliothèque <strong>Pygame</strong> pour le rendu graphique et la gestion des événements clavier.</p>
             `,
             pdf: "NSI.pdf"
-        }
+        },
+        sae204: {
+            title: "Projet Intégratif : La nocivité des ondes électromagnétiques liées aux smartphones(SAE 204)",
+            image: "photos/ondes.png", 
+            tags: ["Recherche Scientifique", "Normes & DAS", "Santé Publique", "Communication"],
+            desc: `
+                <p style="margin-bottom: 1rem;">L’objectif de cette SAE était de mettre en pratique nos compétences de recherche, d’analyse et de communication en menant une étude bibliographique approfondie sur la nocivité potentielle des ondes électromagnétiques liées à l’usage des smartphones.</p>
+                
+                <h3 style="margin-top: 1.5rem; color: var(--color-primary);">Mes réalisations et contributions :</h3>
+                <ul style="margin-bottom: 1.5rem; padding-left: 1.5rem; line-height: 1.6;">
+                    <li><strong>Recherche documentaire rigoureuse :</strong> Analyse de sources académiques, techniques et institutionnelles (OMS, ANFR, ANSES) en français et en anglais.</li>
+                    <li><strong>Analyse critique et sanitaire :</strong> Synthèse des différentes positions scientifiques autour des effets biologiques des radiofréquences et des limites des études actuelles. J'ai particulièrement pris en charge l'analyse des impacts sanitaires potentiels.</li>
+                    <li><strong>Étude normative :</strong> Synthèse des normes en vigueur, notamment le Débit d'Absorption Spécifique (DAS), et des perspectives technologiques d'atténuation.</li>
+                    <li><strong>Communication professionnelle :</strong> Mise en forme d'un rapport structuré de 30 pages et conception d'un diaporama pour une soutenance orale face à un jury.</li>
+                </ul>
+
+                <h3 style="margin-top: 1.5rem; color: var(--color-primary);">Lien avec le référentiel du B.U.T R&T :</h3>
+                <p style="margin-bottom: 1rem;">Si je dois faire un lien avec le référentiel de mon B.U.T R&T, ce projet m'a permis d'approfondir les compétences suivantes :</p>
+                
+                <p style="margin-bottom: 1rem;"><strong>Connecter :</strong> La recherche d'informations contradictoires et l'analyse des impacts environnementaux et sanitaires m'ont demandé d'appliquer la <strong>CE2.02</strong> ("en faisant preuve d'une démarche scientifique") et la <strong>CE2.04</strong> ("en proposant des solutions respectueuses de l'environnement"). L'étude théorique des différentes fréquences, des ondes radio aux bandes millimétriques de la 5G (illustrée par la Figure 4 de mon rapport), a renforcé ma compréhension théorique nécessaire à l'<strong>AC22.01</strong> ("Déployer et caractériser des systèmes de transmissions complexes").</p>
+
+                <p style="margin-bottom: 1.5rem;"><strong>Sécuriser (et Normes) :</strong> L'analyse approfondie de la réglementation européenne 1999/519/CE et des limites d'exposition au DAS (détaillée dans la Figure 9 de notre rapport) fait directement appel à la <strong>CE4.02</strong> ("en respectant les normes et le cadre juridique").</p>
+
+                <h3 style="margin-top: 1.5rem; color: var(--color-primary);">Bilan :</h3>
+                <p style="margin-bottom: 1.5rem;">Ce projet a été particulièrement enrichissant car il m'a permis de développer mes capacités d'organisation de l'information et d'esprit de synthèse. Rédiger un rapport complet de 30 pages et le vulgariser en 10 minutes à l'oral m'a exercé à la communication claire sur un sujet extrêmement complexe, mêlant technologie de pointe, santé publique et responsabilité sociétale.</p>
+            `,
+            pdf: "SAE204-RAPPORT-FINAL.pdf"
+        },
     };
 
     document.querySelectorAll('.view-details').forEach(btn => {
